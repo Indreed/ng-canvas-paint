@@ -4,9 +4,10 @@ import { PaintComponent } from './paint.component';
 import {FormsModule} from '@angular/forms';
 import { PencilComponent } from './pencil/pencil.component';
 import { ModeButtonComponent } from './components/mode-button/mode-button.component';
+import { BrushComponent } from './brush/brush.component';
 
 @NgModule({
-  declarations: [PaintComponent, PencilComponent, ModeButtonComponent],
+  declarations: [PaintComponent, PencilComponent, ModeButtonComponent, BrushComponent],
   imports: [
     FormsModule,
     CommonModule

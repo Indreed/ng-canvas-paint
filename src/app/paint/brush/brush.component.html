@@ -1,0 +1,8 @@
+<app-mode-button [isActive]="isActive" modeLabel="Brush" (modeClick)="onChange()"></app-mode-button>
+<div *ngIf="isActive">
+  <input type="color" [(ngModel)]="payload.config.color" (ngModelChange)="onChange()" title="choose brush color">
+  <div>
+    <input type="range" min="1" max="20" [(ngModel)]="payload.config.size" (ngModelChange)="onChange()" title="choose brush size">
+    {{payload.config.size}}
+  </div>
+</div>

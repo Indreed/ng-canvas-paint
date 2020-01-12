@@ -1,4 +1,5 @@
 import {PencilService} from './pencil/pencil.service';
+import {BrushService} from './brush/brush.service';
 
 export declare interface BasicInteraction {
   init(canvas: HTMLCanvasElement, config: any): void;
@@ -8,6 +9,7 @@ export declare interface BasicInteraction {
 
 export interface Interactions {
   pencil: PencilService;
+  brush: BrushService;
 }
 
 export type Mode = keyof Interactions;

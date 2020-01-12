@@ -3,4 +3,7 @@
   <div class="control">
     <app-pencil [isActive]="mode === 'pencil'" (updateMode)="switchMode($event)"></app-pencil>
   </div>
+  <div class="control">
+    <app-brush [isActive]="mode === 'brush'" (updateMode)="switchMode($event)"></app-brush>
+  </div>
 </div>

@@ -7,7 +7,8 @@ import {PencilConfig} from './pencil.model';
 })
 export class PencilService implements BasicInteraction {
   public initialized = false;
-  private ctx: CanvasRenderingContext2D;
+  public ctx: CanvasRenderingContext2D;
+  public size = 1;
   private canvas: any;
   private onMouseUpBound: any;
   private onMouseDownBound: any;
@@ -27,7 +28,7 @@ export class PencilService implements BasicInteraction {
 
   addPoint(e) {
     this.ctx.beginPath();
-    this.ctx.arc(e.offsetX, e.offsetY, 1, 0, 2 * Math.PI);
+    this.ctx.arc(e.offsetX, e.offsetY, this.size / 2, 0, 2 * Math.PI);
     this.ctx.fill();
   }
 
@@ -77,7 +78,7 @@ export class PencilService implements BasicInteraction {
   }
 
   setupCtx() {
-    this.ctx.lineWidth = 1;
+    this.ctx.lineWidth = this.size;
     this.ctx.lineJoin = 'round';
     this.ctx.lineCap = 'round';
   }
