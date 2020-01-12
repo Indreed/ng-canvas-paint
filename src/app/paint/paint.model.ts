@@ -1,8 +1,8 @@
-import {PencilService} from './services/pencil/pencil.service';
+import {PencilService} from './pencil/pencil.service';
 
 export declare interface BasicInteraction {
-  init(canvas: HTMLCanvasElement, component: any, config: any): void;
-  update(): void;
+  init(canvas: HTMLCanvasElement, config: any): void;
+  update(config: any): void;
   clearEventListeners(): void;
 }
 
@@ -11,3 +11,8 @@ export interface Interactions {
 }
 
 export type Mode = keyof Interactions;
+
+export interface ModePayload<C> {
+  mode: Mode;
+  config?: C;
+}

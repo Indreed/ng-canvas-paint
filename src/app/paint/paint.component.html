@@ -1,0 +1,6 @@
+<canvas #canvas width="400" height="400"></canvas>
+<div class="controls">
+  <div class="control">
+    <app-pencil [isActive]="mode === 'pencil'" (updateMode)="switchMode($event)"></app-pencil>
+  </div>
+</div>

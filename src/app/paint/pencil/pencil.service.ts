@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {BasicInteraction} from '../../paint.model';
+import {BasicInteraction} from '../paint.model';
+import {PencilConfig} from './pencil.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,19 +9,20 @@ export class PencilService implements BasicInteraction {
   public initialized = false;
   private ctx: CanvasRenderingContext2D;
   private canvas: any;
-  private component: any;
   private onMouseUpBound: any;
   private onMouseDownBound: any;
   private onMouseMoveBound: any;
 
   constructor() { }
 
-  update(): void {
+  update(config: PencilConfig): void {
+    this.changeColor(config.color);
   }
 
   clearEventListeners(): void {
     this.canvas.removeEventListener('mousedown', this.onMouseDownBound);
-    this.canvas.removeEventListener('mouseup', this.onMouseUpBound);
+    document.removeEventListener('mouseup', this.onMouseUpBound);
+    this.initialized = false;
   }
 
   addPoint(e) {
@@ -66,23 +68,29 @@ export class PencilService implements BasicInteraction {
       this.onMouseUpBound = this.onMouseUp.bind(this);
 
     }
-    this.canvas.addEventListener('mouseup', this.onMouseUpBound);
+    document.addEventListener('mouseup', this.onMouseUpBound);
+  }
+
+  changeColor(color: string) {
+    this.ctx.strokeStyle = color;
+    this.ctx.fillStyle = color;
   }
 
   setupCtx() {
-    this.ctx.fillStyle = '#000';
     this.ctx.lineWidth = 1;
     this.ctx.lineJoin = 'round';
     this.ctx.lineCap = 'round';
   }
 
-  init(canvas: HTMLCanvasElement, component: any, config: any): void {
-    this.canvas = canvas;
-    this.ctx = canvas.getContext('2d');
-    this.component = component;
+  init(canvas: HTMLCanvasElement, config: PencilConfig): void {
+    if (!this.initialized) {
+      this.canvas = canvas;
+      this.ctx = canvas.getContext('2d');
+      this.setupCtx();
+      this.addEventListeners();
+      this.initialized = true;
+    }
 
-    this.setupCtx();
-    this.addEventListeners();
-    this.initialized = true;
+    this.update(config);
   }
 }

@@ -1,0 +1,4 @@
+<app-mode-button [isActive]="isActive" modeLabel="Pencil" (modeClick)="onChange()"></app-mode-button>
+<div *ngIf="isActive">
+  <input type="color" [(ngModel)]="payload.config.color" (ngModelChange)="onChange()" title="choose pencil color">
+</div>

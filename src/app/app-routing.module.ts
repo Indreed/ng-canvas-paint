@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PaintComponent} from './paint/pages/paint.component';
+import {PaintComponent} from './paint/paint.component';
 
 const routes: Routes = [
   {path: '', component: PaintComponent},
