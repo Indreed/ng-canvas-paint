@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ModePayload} from '../paint.model';
+import {ModePayload} from '../../paint.model';
 import {BrushConfig} from './brush.model';
 
 @Component({

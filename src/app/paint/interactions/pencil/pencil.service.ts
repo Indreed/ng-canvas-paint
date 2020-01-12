@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BasicInteraction} from '../paint.model';
+import {BasicInteraction} from '../../paint.model';
 import {PencilConfig} from './pencil.model';
 
 @Injectable({

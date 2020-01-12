@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Mode, ModePayload} from '../paint.model';
+import {Mode, ModePayload} from '../../paint.model';
 import {PencilConfig} from './pencil.model';
 
 @Component({

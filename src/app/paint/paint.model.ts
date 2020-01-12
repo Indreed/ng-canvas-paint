@@ -1,5 +1,5 @@
-import {PencilService} from './pencil/pencil.service';
-import {BrushService} from './brush/brush.service';
+import {PencilService} from './interactions/pencil/pencil.service';
+import {BrushService} from './interactions/brush/brush.service';
 
 export declare interface BasicInteraction {
   init(canvas: HTMLCanvasElement, config: any): void;

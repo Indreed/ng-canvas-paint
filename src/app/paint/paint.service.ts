@@ -1,9 +1,9 @@
 import {Injectable, Injector} from '@angular/core';
 import {PaintModule} from './paint.module';
-import {PencilService} from './pencil/pencil.service';
+import {PencilService} from './interactions/pencil/pencil.service';
 import {Interactions, Mode} from './paint.model';
-import {PencilConfig} from './pencil/pencil.model';
-import {BrushService} from './brush/brush.service';
+import {PencilConfig} from './interactions/pencil/pencil.model';
+import {BrushService} from './interactions/brush/brush.service';
 
 @Injectable({
   providedIn: 'root'
