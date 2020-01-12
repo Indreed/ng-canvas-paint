@@ -1,3 +1,14 @@
-canvas {
-  border: 1px solid grey;
+.canvas-container {
+  position: relative;
+
+  canvas {
+    border: 1px solid grey;
+  }
+
+  .interaction-canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 }
+

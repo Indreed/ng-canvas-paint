@@ -4,7 +4,7 @@ import {BrushService} from './brush/brush.service';
 export declare interface BasicInteraction {
   init(canvas: HTMLCanvasElement, config: any): void;
   update(config: any): void;
-  clearEventListeners(): void;
+  clear(): void;
 }
 
 export interface Interactions {

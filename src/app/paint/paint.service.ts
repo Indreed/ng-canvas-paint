@@ -21,8 +21,8 @@ export class PaintService {
     this.interactions[mode].init(canvas, config);
   }
 
-  clearListeners(mode: Mode) {
+  clear(mode: Mode) {
     console.log('clearListeners for', mode);
-    this.interactions[mode].clearEventListeners();
+    this.interactions[mode].clear();
   }
 }

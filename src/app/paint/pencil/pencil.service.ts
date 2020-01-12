@@ -20,7 +20,7 @@ export class PencilService implements BasicInteraction {
     this.changeColor(config.color);
   }
 
-  clearEventListeners(): void {
+  clear(): void {
     this.canvas.removeEventListener('mousedown', this.onMouseDownBound);
     document.removeEventListener('mouseup', this.onMouseUpBound);
     this.initialized = false;
